@@ -6,6 +6,9 @@ const VideoDetail = ({title,description}) =>{
       <h1>
         {title}
       </h1>
-    </div>  
+      <p>{description}</p>
+    </div>
   )
 }
+
+export default VideoDetail;
