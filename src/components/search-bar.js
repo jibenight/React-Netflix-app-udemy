@@ -7,8 +7,13 @@ class SearchBar extends Component{
   }
   render (){
     return(
-      <div>
-          <input onChange={this.handleChange.bind(this)} placeholder={this.state.placeHolder} />
+      <div className="row">
+          <div className="col-lg-8 input-group">
+              <input type="text" className="form-control input-lg" onChange={this.handleChange.bind(this)} placeholder={this.state.placeHolder} />
+              <span className="input-group-btn">
+                <button className="btn btn-secondary" onClick={this.handleOnClik.bind(this)}>Go</button>
+              </span>
+          </div>
       </div>
 
     )
@@ -17,6 +22,13 @@ class SearchBar extends Component{
   handleChange(event){
   this.setState({searchText:event.target.value});
   }
+
+  handleOnClik(event){
+    this.props.callback(this.state.searchText);
+  }
+
+
+
 }
 
 export default SearchBar;
